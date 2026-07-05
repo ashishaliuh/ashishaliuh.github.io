@@ -1,8 +1,8 @@
 /*
 Name: Ashish Ali
-Date Created: 6/23/26 
-Date Modified: 6/27/26
-Purpose: Homework 2 CSS file
+Date Created: 6/29/26 
+Date Modified: 7/4/26
+Purpose: Homework 3 CSS file
 */ 
 
 /* Changing the color of the header background*/
@@ -103,4 +103,14 @@ td.output {
     border-spacing: 2px;
     border-radius: 20px;
     color:black;
+}
+
+.valid {
+    color: green;
+    font-weight: bold;
+}
+
+.invalid {
+    color: red;
+    font-weight: bold;
 }

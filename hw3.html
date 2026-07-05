@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <!--
 Name: Ashish Ali
-Date Created: 6/23/26 
-Date Modified: 6/27/26
-Purpose: Homework 2 HTML file
+Date Created: 6/29/26 
+Date Modified: 7/4/26
+Purpose: Homework 3 HTML file
 -->
 
 <!-- I used W3 Schools and the resources that were provided by MISSO to help me with the homework-->
 <html lang="en">    
     <head>  
-        <link rel="stylesheet" href="hw2.css"> 
+        <link rel="stylesheet" href="hw3.css"> 
     
         <title> Patient Registration Form | Kona Clinic</title>
     </head>
@@ -51,10 +51,11 @@ Purpose: Homework 2 HTML file
                         type="text" 
                         name="fName"
                         id="fName"
+                        minlength="1"
                         maxlength="30"
                         required
                         title="Only letters, apostrophes and dashes are allowed."
-                        pattern="[A-Za-z]{1,30}"
+                        pattern="[A-Za-z'-]{1,30}"
                         onblur="validateFname()"
                         placeholder="John"
                         />
@@ -75,7 +76,7 @@ Purpose: Homework 2 HTML file
                         maxlength="1"
                         title="Only one letter is allowed."
                         pattern="[A-Za-z]{0,1}"
-                        onblur="validateMi()"
+                        oninput="validateMi()"
                         placeholder="A"
                         />
 
@@ -94,7 +95,7 @@ Purpose: Homework 2 HTML file
                         maxlength="30"
                         required
                         title="Only letters, apostrophes and dashes are allowed."
-                        pattern="[A-Za-z]{1,30}"
+                        pattern="[A-Za-z'-]{1,30}"
                         onblur="validateLname()"
                         placeholder="Smith" 
                         />
@@ -155,11 +156,12 @@ Purpose: Homework 2 HTML file
                         <input
                         type="password"
                         minlength="9"
-                        maxlength="11"
+                        maxlength="9"
                         id="ssn"
                         name="ssn"
                         title="Please enter your social security number"
                         placeholder="123-45-6789"
+                        oninput="validateSsn()"
                         onblur="validateSsn()"
                         />
                         <br>
@@ -197,6 +199,7 @@ Purpose: Homework 2 HTML file
                         type="text" 
                         name="address2"
                         id="address2"
+                        minlength="2"
                         maxlength="30"
                         title="Please enter your address"
                         placeholder="Apt. 4B"
@@ -215,7 +218,11 @@ Purpose: Homework 2 HTML file
                         required
                         title="Please enter your city name"
                         placeholder="Kailua-Kona"
+                        onblur="validateCity()"
                         />
+                         <br>
+                        <span class="error" id="cityError"></span>
+
                     </td>
                 </tr>
 
@@ -407,7 +414,7 @@ Purpose: Homework 2 HTML file
                         name="uName"
                         id="uName"
                         minlength="5"
-                        maxlength="30"
+                        maxlength="20"
                         required
                         title="Username must be at least 5 characters long and can contain letters, numbers, and underscores. Cannot start with a number."
                         placeholder="newuser123"
@@ -466,11 +473,13 @@ Purpose: Homework 2 HTML file
                 <tr> 
                     <td class="td1" colspan="4">
                         <center>
-                            <input type="submit" name="submit" id="submit">
+                            <input type="submit" name="submit" id="submit" disabled>
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             <input type="reset" name="reset" id="reset">
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <input type="button" name="review" id="review" value="Review" onclick="reviewInput()"> 
+                            <input type="button" name="review" id="review" value="Review" onclick="reviewInput()">
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <input type="button" name="validate" id="validate" value="Validate" onclick="validateData()">  
                         </center>
                     </td>
                 </tr>
@@ -498,7 +507,7 @@ Purpose: Homework 2 HTML file
     <p id="footer">Copyright &copy; 2026 Kona Clinic | <a href="https://www.linkedin.com/in/ashish-ali/" target="_blank" rel="noopener noreferrer">Contact Us</a></p>
 </footer>
 
-<script src="hw2.js"></script>
+<script src="hw3.js"></script>
 
     </body>        
 </html>
